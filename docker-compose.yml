@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  frontend:
+    build: ./stock-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NUXT_PUBLIC_API_BASE_URL=http://localhost:8000/api
+    volumes:
+      - ./stock-frontend:/app
+    command: sh -c "yarn install && yarn dev"
+  backend:
+    build: ./stock-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./stock-backend/.env
+    volumes:
+      - ./stock-backend:/app
+    command: sh -c "pip install -r requirements.txt && python manage.py runserver 0.0.0.0:8000"

@@ -1,0 +1,17 @@
+# Node
+node_modules/
+dist/
+.nuxt/
+*.log
+
+# Python
+*.pyc
+__pycache__/
+.venv/
+db.sqlite3
+
+# VSCode
+.vscode/
+
+# Env
+.env
