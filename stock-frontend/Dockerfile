@@ -1,5 +1,5 @@
 # 使用官方 Node.js 18 運行時作為基礎映像
-FROM node:18-alpine
+FROM node:18
 
 # 設置工作目錄
 WORKDIR /app
